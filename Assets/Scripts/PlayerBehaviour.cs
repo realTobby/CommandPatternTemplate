@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DashState
+{
+    Ready,
+    Dashing,
+    Cooldown
+}
+
 public class PlayerBehaviour : MonoBehaviour
 {
     public Rigidbody2D rb;
@@ -18,6 +25,11 @@ public class PlayerBehaviour : MonoBehaviour
     public bool canDash = true;
     public float dashCooldown = 3f;
 
+    public DashState dashState = DashState.Ready;
+    public float dashTimer;
+    public float maxDash = 20f;
+    public Vector2 savedVelocity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +41,9 @@ public class PlayerBehaviour : MonoBehaviour
         ProcessInputs();
         RotateToMouse();
     }
+
+
+
 
     void RotateToMouse()
     {
@@ -97,3 +112,6 @@ public class PlayerBehaviour : MonoBehaviour
 
 
 }
+
+
+

@@ -207,7 +207,6 @@ GameObject:
   - component: {fileID: 656393990}
   - component: {fileID: 656393989}
   - component: {fileID: 656393988}
-  - component: {fileID: 656393991}
   - component: {fileID: 656393992}
   m_Layer: 0
   m_Name: mage_player
@@ -224,7 +223,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656393987}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
@@ -276,7 +275,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c75c9e6456c790347800732b55b51bac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99387368ae0d5bf449537bfc72d414a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -301,26 +300,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &656393991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656393987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be34015259874e540819b0683fc36912, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 656393988}
-  DamageValue: 1
-  DefenseValue: 1
-  SpeedValue: 3
-  moveDirection: {x: 0, y: 0}
-  CurrentMousePosition: {x: 0, y: 0}
-  canDash: 1
-  dashCooldown: 3
 --- !u!114 &656393992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,9 +309,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 656393987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d131b8199f9a1f041b3ed11b094c63c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b241e86a3038d840bcbe2257997dafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  dashSpeed: 9
+  dashDuration: 0.1
+  dashTimer: 0.10207249
 --- !u!1 &749274783
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +485,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: abec6e26fce33dc47805860954d12032, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -708,10 +691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f89c17df3b94894b9849a17c186058f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireballPrefab: {fileID: 8532896399224274978, guid: ac892c4df05ed1a4e887defe9722c691,
-    type: 3}
-  _dashParticlePrefab: {fileID: 2588978373050749248, guid: b3bdb2bc03a054541864e32277a39663,
-    type: 3}
 --- !u!4 &1358433370
 Transform:
   m_ObjectHideFlags: 0
@@ -1076,10 +1055,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ccbe17719d170478cd454183f87414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerReference: {fileID: 656393987}
-  damage_text: {fileID: 1928708637}
-  defense_text: {fileID: 2083828386}
-  speed_text: {fileID: 1260720361}
 --- !u!1 &2083828384
 GameObject:
   m_ObjectHideFlags: 0
